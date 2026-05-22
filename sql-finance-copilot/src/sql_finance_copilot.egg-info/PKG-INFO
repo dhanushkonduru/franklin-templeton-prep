@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: sql-finance-copilot
+Version: 0.1.0
+Summary: Production-style SQL copilot for financial databases
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.111
+Requires-Dist: uvicorn[standard]>=0.30
+Requires-Dist: sqlalchemy>=2.0
+Requires-Dist: psycopg[binary]>=3.2
+Requires-Dist: groq>=0.18
+Requires-Dist: sentence-transformers>=3.0
+Requires-Dist: faiss-cpu>=1.8
+Requires-Dist: sqlglot>=25.0
+Requires-Dist: streamlit>=1.37
+Requires-Dist: plotly>=5.22
+Requires-Dist: pandas>=2.2
+Requires-Dist: numpy>=1.26
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: pytest>=8.0
+
+# SQL Finance Copilot
+
+Production-style SQL copilot for finance teams. The system converts natural-language questions into safe PostgreSQL queries, retrieves only the relevant schema context, validates generated SQL, executes read-only queries, retries failures with automatic repair, and optionally recommends charts.
+
+## Architecture
+
+The code is organized as a layered system:
+
+- `schema/` handles PostgreSQL introspection, embeddings, FAISS indexing, and semantic retrieval.
+- `llm/` handles prompt construction, Groq calls, SQL generation, and repair.
+- `validation/` enforces SQL safety rules before execution.
+- `db/` owns engine creation, execution, and safe result materialization.
+- `core/` coordinates the end-to-end workflow.
+- `api/` exposes a FastAPI service.
+- `app/` contains the Streamlit UI.
+- `charts/` contains chart inference logic.
+
+## Workflow
+
+1. Introspect the database schema and build or load a semantic index.
+2. Retrieve only the most relevant schema tables for the user question.
+3. Generate SQL from the question and retrieved schema context.
+4. Validate the SQL with `sqlglot` and a strict safety policy.
+5. Execute the SQL with a hard row cap.
+6. If execution fails, repair the SQL and retry.
+7. Return SQL, rows, and optional chart guidance for auditability.
+
+## Run
+
+Create a virtual environment, install dependencies, and copy `.env.example` to `.env`.
+
+```bash
+pip install -e .
+uvicorn sql_finance_copilot.api.main:app --reload
+streamlit run src/sql_finance_copilot/app/streamlit_app.py
+```
+
+## Notes
+
+- The application is designed for read-only analytics workflows.
+- Start with a narrow database role that has `SELECT` access only.
+- Rebuild the schema index whenever your database schema changes materially.

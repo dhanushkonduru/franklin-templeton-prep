@@ -1,0 +1,138 @@
+Summary Metrics
+========================================
+total_samples: 90
+precision: 1.0
+recall: 0.3625
+f1: 0.5321100917431193
+evaluator_agreement_percentage: 22.22222222222222
+total_hallucinations: 29
+intrinsic_hallucinations: 16
+extrinsic_hallucinations: 13
+
+Top 5 Disagreements
+========================================
+
+1. votes={'nli': 1, 'heuristic': 0, 'classifier': 1}
+question: State Asset Management segment revenue for Goldman in 2024.
+answer: $7,410 million.
+nli_label: neutral | nli_score: 0.9873014688491821
+rouge: 0.0 | embedding_similarity: 0.7507888078689575
+hallucination_type: extrinsic | hallucinated: True
+
+
+2. votes={'nli': 1, 'heuristic': 1, 'classifier': 0}
+question: In 2024, what assets under management did Blackrock disclose?
+answer: The answer could not be found in the provided context.
+nli_label: neutral | nli_score: 0.9855294823646545
+rouge: 0.0 | embedding_similarity: 0.5154621005058289
+hallucination_type: unknown | hallucinated: False
+
+
+3. votes={'nli': 1, 'heuristic': 0, 'classifier': 1}
+question: What net earnings did Goldman report in 2024?
+answer: $14,276
+nli_label: neutral | nli_score: 0.9845269918441772
+rouge: 0.4 | embedding_similarity: 0.8002381920814514
+hallucination_type: extrinsic | hallucinated: True
+
+
+4. votes={'nli': 1, 'heuristic': 1, 'classifier': 0}
+question: State Goldman's technology revenue in 2024.
+answer: The answer could not be found in the provided context.
+nli_label: neutral | nli_score: 0.9796568751335144
+rouge: 0.0 | embedding_similarity: 0.5264100432395935
+hallucination_type: unknown | hallucinated: False
+
+
+5. votes={'nli': 1, 'heuristic': 1, 'classifier': 0}
+question: What revenue figure did Blackrock report for Emea in 2024?
+answer: The answer could not be found in the provided context.
+nli_label: neutral | nli_score: 0.9788891077041626
+rouge: 0.0 | embedding_similarity: 0.5237343311309814
+hallucination_type: unknown | hallucinated: False
+
+
+Worst Hallucination Examples
+========================================
+
+1.
+question: State Morgan Stanley's total revenue for 2024.
+answer: Potential hallucination detected.
+nli_label: contradiction | nli_score: 0.8043779730796814
+rouge: 0.0 | embedding_similarity: 0.45283520221710205
+hallucination_type: intrinsic | hallucinated: True
+
+
+2.
+question: What was Institutional Securities segment revenue for Morgan Stanley in 2024?
+answer: Potential hallucination detected.
+nli_label: contradiction | nli_score: 0.8712800145149231
+rouge: 0.0 | embedding_similarity: 0.46409153938293457
+hallucination_type: intrinsic | hallucinated: True
+
+
+3.
+question: How much revenue did the Institutional Securities segment generate for Morgan Stanley in 2024?
+answer: Potential hallucination detected.
+nli_label: contradiction | nli_score: 0.8712800145149231
+rouge: 0.0 | embedding_similarity: 0.46409153938293457
+hallucination_type: intrinsic | hallucinated: True
+
+
+4.
+question: In 2024, what was revenue for Morgan Stanley's Institutional Securities segment?
+answer: Potential hallucination detected.
+nli_label: contradiction | nli_score: 0.8712800145149231
+rouge: 0.0 | embedding_similarity: 0.46409153938293457
+hallucination_type: intrinsic | hallucinated: True
+
+
+5.
+question: What revenue figure is reported for the Institutional Securities segment of Morgan Stanley in 2024?
+answer: Potential hallucination detected.
+nli_label: contradiction | nli_score: 0.8712800145149231
+rouge: 0.0 | embedding_similarity: 0.46409153938293457
+hallucination_type: intrinsic | hallucinated: True
+
+
+Best Grounded Answers
+========================================
+
+1.
+question: In 2024, what was Goldman revenue?
+answer: $53.51 billion.
+nli_label: neutral | nli_score: 0.970981240272522
+rouge: 1.0 | embedding_similarity: 0.9916603565216064
+hallucination_type: unknown | hallucinated: False
+
+
+2.
+question: State Goldman's total revenue for 2024.
+answer: $53.51 billion.
+nli_label: neutral | nli_score: 0.970981240272522
+rouge: 1.0 | embedding_similarity: 0.9916603565216064
+hallucination_type: unknown | hallucinated: False
+
+
+3.
+question: What was Goldman total revenue in 2024?
+answer: $53.51 billion
+nli_label: neutral | nli_score: 0.9537085890769958
+rouge: 1.0 | embedding_similarity: 1.0
+hallucination_type: unknown | hallucinated: False
+
+
+4.
+question: How much total revenue did Goldman report in 2024?
+answer: $53.51 billion
+nli_label: neutral | nli_score: 0.9537085890769958
+rouge: 1.0 | embedding_similarity: 1.0
+hallucination_type: unknown | hallucinated: False
+
+
+5.
+question: What total revenues were reported by Goldman in 2024?
+answer: $53.51 billion
+nli_label: neutral | nli_score: 0.9537085890769958
+rouge: 1.0 | embedding_similarity: 1.0
+hallucination_type: unknown | hallucinated: False

@@ -1,0 +1,53 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Installer logs
+pip-log.txt
+
+# dotenv / env files
+.env
+.env.*
+
+# SQLite / DB files
+*.db
+*.sqlite
+audit.db
+
+# Editor and IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Test, coverage, caches
+.pytest_cache/
+.cache/
+.coverage
+
+# Jupyter
+.ipynb_checkpoints
+
+# Language/model tooling caches
+.groq/
+.langgraph/
+
+# Chroma / vectorstores
+chroma-*
+.chromadb/
+
+# Logs
+*.log

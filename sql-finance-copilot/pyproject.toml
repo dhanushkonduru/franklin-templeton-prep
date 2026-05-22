@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sql-finance-copilot"
+version = "0.1.0"
+description = "Production-style SQL copilot for financial databases"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.111",
+  "uvicorn[standard]>=0.30",
+  "sqlalchemy>=2.0",
+  "psycopg[binary]>=3.2",
+  "groq>=0.18",
+  "sentence-transformers>=3.0",
+  "faiss-cpu>=1.8",
+  "sqlglot>=25.0",
+  "streamlit>=1.37",
+  "plotly>=5.22",
+  "pandas>=2.2",
+  "numpy>=1.26",
+  "python-dotenv>=1.0",
+  "pytest>=8.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

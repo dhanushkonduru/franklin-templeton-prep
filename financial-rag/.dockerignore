@@ -1,0 +1,12 @@
+.venv
+__pycache__
+*.pyc
+.env
+.git
+data/
+*.db
+*.chroma
+chroma_db/
+*.bin
+*.pt
+*.safetensors

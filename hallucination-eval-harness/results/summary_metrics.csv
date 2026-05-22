@@ -1,0 +1,2 @@
+total_samples,precision,recall,f1,evaluator_agreement_percentage,total_hallucinations,intrinsic_hallucinations,extrinsic_hallucinations
+90,1.0,0.3625,0.5321100917431193,22.22222222222222,29,16,13

@@ -1,0 +1,632 @@
+[
+  {
+    "question": "What was Blackrock assets under management (AUM) in 2023?",
+    "ground_truth": "$10.0 trillion",
+    "supporting_context": "At December 31, 2023, total AUM was $10.0 trillion, representing a CAGR of 11% over the last five years.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 8
+  },
+  {
+    "question": "How much AUM did Blackrock report in 2023?",
+    "ground_truth": "$10.0 trillion",
+    "supporting_context": "At December 31, 2023, total AUM was $10.0 trillion, representing a CAGR of 11% over the last five years.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 8
+  },
+  {
+    "question": "In 2023, what assets under management did Blackrock disclose?",
+    "ground_truth": "$10.0 trillion",
+    "supporting_context": "At December 31, 2023, total AUM was $10.0 trillion, representing a CAGR of 11% over the last five years.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 8
+  },
+  {
+    "question": "State Blackrock's AUM for 2023.",
+    "ground_truth": "$10.0 trillion",
+    "supporting_context": "At December 31, 2023, total AUM was $10.0 trillion, representing a CAGR of 11% over the last five years.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 8
+  },
+  {
+    "question": "What was the AUM of Blackrock in 2023?",
+    "ground_truth": "$10.0 trillion",
+    "supporting_context": "At December 31, 2023, total AUM was $10.0 trillion, representing a CAGR of 11% over the last five years.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 8
+  },
+  {
+    "question": "What was Blackrock assets under management (AUM) in 2024?",
+    "ground_truth": "$31 billion",
+    "supporting_context": "• Private Equity and Opportunistic included AUM of $31 billion in opportunistic and credit offerings, $25 billion in private equity solutions, and $10 billion in Long Term",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "How much AUM did Blackrock report in 2024?",
+    "ground_truth": "$31 billion",
+    "supporting_context": "• Private Equity and Opportunistic included AUM of $31 billion in opportunistic and credit offerings, $25 billion in private equity solutions, and $10 billion in Long Term",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "In 2024, what assets under management did Blackrock disclose?",
+    "ground_truth": "$31 billion",
+    "supporting_context": "• Private Equity and Opportunistic included AUM of $31 billion in opportunistic and credit offerings, $25 billion in private equity solutions, and $10 billion in Long Term",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "State Blackrock's AUM for 2024.",
+    "ground_truth": "$31 billion",
+    "supporting_context": "• Private Equity and Opportunistic included AUM of $31 billion in opportunistic and credit offerings, $25 billion in private equity solutions, and $10 billion in Long Term",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "What was the AUM of Blackrock in 2024?",
+    "ground_truth": "$31 billion",
+    "supporting_context": "• Private Equity and Opportunistic included AUM of $31 billion in opportunistic and credit offerings, $25 billion in private equity solutions, and $10 billion in Long Term",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "What technology-related revenue did Blackrock report in 2024?",
+    "ground_truth": "$1.5 billion",
+    "supporting_context": "Technology services revenue of $1.5 billion was up 9% year-over-year, and annual contract value (“ACV”) increased 10% year-over-year.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "How much technology revenue did Blackrock disclose in 2024?",
+    "ground_truth": "$1.5 billion",
+    "supporting_context": "Technology services revenue of $1.5 billion was up 9% year-over-year, and annual contract value (“ACV”) increased 10% year-over-year.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "In 2024, what technology services revenue was reported by Blackrock?",
+    "ground_truth": "$1.5 billion",
+    "supporting_context": "Technology services revenue of $1.5 billion was up 9% year-over-year, and annual contract value (“ACV”) increased 10% year-over-year.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "State Blackrock's technology revenue in 2024.",
+    "ground_truth": "$1.5 billion",
+    "supporting_context": "Technology services revenue of $1.5 billion was up 9% year-over-year, and annual contract value (“ACV”) increased 10% year-over-year.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "What revenue from technology activities did Blackrock report in 2024?",
+    "ground_truth": "$1.5 billion",
+    "supporting_context": "Technology services revenue of $1.5 billion was up 9% year-over-year, and annual contract value (“ACV”) increased 10% year-over-year.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "What was Emea revenue for Blackrock in 2024?",
+    "ground_truth": "$65 billion",
+    "supporting_context": "EMEA net inflows of $65 billion were driven by cash, fixed income, multi-asset, and alternatives net inflows of $38 billion, $27 billion, $23 billion, and $3 billion, respectively.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "How much revenue did Blackrock report in Emea in 2024?",
+    "ground_truth": "$65 billion",
+    "supporting_context": "EMEA net inflows of $65 billion were driven by cash, fixed income, multi-asset, and alternatives net inflows of $38 billion, $27 billion, $23 billion, and $3 billion, respectively.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "In 2024, what revenue is disclosed for Blackrock in Emea?",
+    "ground_truth": "$65 billion",
+    "supporting_context": "EMEA net inflows of $65 billion were driven by cash, fixed income, multi-asset, and alternatives net inflows of $38 billion, $27 billion, $23 billion, and $3 billion, respectively.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "State Blackrock's Emea revenue in 2024.",
+    "ground_truth": "$65 billion",
+    "supporting_context": "EMEA net inflows of $65 billion were driven by cash, fixed income, multi-asset, and alternatives net inflows of $38 billion, $27 billion, $23 billion, and $3 billion, respectively.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What revenue figure did Blackrock report for Emea in 2024?",
+    "ground_truth": "$65 billion",
+    "supporting_context": "EMEA net inflows of $65 billion were driven by cash, fixed income, multi-asset, and alternatives net inflows of $38 billion, $27 billion, $23 billion, and $3 billion, respectively.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What was Americas revenue for Blackrock in 2024?",
+    "ground_truth": "$177 billion",
+    "supporting_context": "Americas net inflows of $177 billion were driven by net inflows into fixed income, multi-asset, cash, and equity of $83 billion, $60 billion, $39 billion, and $4 billion,",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "How much revenue did Blackrock report in Americas in 2024?",
+    "ground_truth": "$177 billion",
+    "supporting_context": "Americas net inflows of $177 billion were driven by net inflows into fixed income, multi-asset, cash, and equity of $83 billion, $60 billion, $39 billion, and $4 billion,",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "In 2024, what revenue is disclosed for Blackrock in Americas?",
+    "ground_truth": "$177 billion",
+    "supporting_context": "Americas net inflows of $177 billion were driven by net inflows into fixed income, multi-asset, cash, and equity of $83 billion, $60 billion, $39 billion, and $4 billion,",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "State Blackrock's Americas revenue in 2024.",
+    "ground_truth": "$177 billion",
+    "supporting_context": "Americas net inflows of $177 billion were driven by net inflows into fixed income, multi-asset, cash, and equity of $83 billion, $60 billion, $39 billion, and $4 billion,",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What revenue figure did Blackrock report for Americas in 2024?",
+    "ground_truth": "$177 billion",
+    "supporting_context": "Americas net inflows of $177 billion were driven by net inflows into fixed income, multi-asset, cash, and equity of $83 billion, $60 billion, $39 billion, and $4 billion,",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What was Asia revenue for Blackrock in 2024?",
+    "ground_truth": "$46 billion",
+    "supporting_context": "Asia-Pacific net inflows of $46 billion were primarily due to fixed income and equity net inflows of $34 billion and $11 billion, respectively.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "How much revenue did Blackrock report in Asia in 2024?",
+    "ground_truth": "$46 billion",
+    "supporting_context": "Asia-Pacific net inflows of $46 billion were primarily due to fixed income and equity net inflows of $34 billion and $11 billion, respectively.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "In 2024, what revenue is disclosed for Blackrock in Asia?",
+    "ground_truth": "$46 billion",
+    "supporting_context": "Asia-Pacific net inflows of $46 billion were primarily due to fixed income and equity net inflows of $34 billion and $11 billion, respectively.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "State Blackrock's Asia revenue in 2024.",
+    "ground_truth": "$46 billion",
+    "supporting_context": "Asia-Pacific net inflows of $46 billion were primarily due to fixed income and equity net inflows of $34 billion and $11 billion, respectively.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What revenue figure did Blackrock report for Asia in 2024?",
+    "ground_truth": "$46 billion",
+    "supporting_context": "Asia-Pacific net inflows of $46 billion were primarily due to fixed income and equity net inflows of $34 billion and $11 billion, respectively.",
+    "document": "blackrock_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What was Goldman total revenue in 2024?",
+    "ground_truth": "$53.51 billion",
+    "supporting_context": "Net revenues were $53.51 billion for 2024, 16% higher than",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "How much total revenue did Goldman report in 2024?",
+    "ground_truth": "$53.51 billion",
+    "supporting_context": "Net revenues were $53.51 billion for 2024, 16% higher than",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "What total revenues were reported by Goldman in 2024?",
+    "ground_truth": "$53.51 billion",
+    "supporting_context": "Net revenues were $53.51 billion for 2024, 16% higher than",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "In 2024, what was Goldman revenue?",
+    "ground_truth": "$53.51 billion",
+    "supporting_context": "Net revenues were $53.51 billion for 2024, 16% higher than",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "State Goldman's total revenue for 2024.",
+    "ground_truth": "$53.51 billion",
+    "supporting_context": "Net revenues were $53.51 billion for 2024, 16% higher than",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "What was Goldman net income in 2024?",
+    "ground_truth": "$14.28 billion",
+    "supporting_context": "We generated net earnings of $14.28 billion for 2024,",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "How much net income did Goldman report in 2024?",
+    "ground_truth": "$14.28 billion",
+    "supporting_context": "We generated net earnings of $14.28 billion for 2024,",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "What net earnings did Goldman report in 2024?",
+    "ground_truth": "$14.28 billion",
+    "supporting_context": "We generated net earnings of $14.28 billion for 2024,",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "In 2024, what was Goldman's net income?",
+    "ground_truth": "$14.28 billion",
+    "supporting_context": "We generated net earnings of $14.28 billion for 2024,",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "State Goldman's net income for 2024.",
+    "ground_truth": "$14.28 billion",
+    "supporting_context": "We generated net earnings of $14.28 billion for 2024,",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "What was Asset Management segment revenue for Goldman in 2024?",
+    "ground_truth": "$5 billion",
+    "supporting_context": "annual negative revenues in the Asset Management segment of $5 billion or more, provided in either case",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "How much revenue did the Asset Management segment generate for Goldman in 2024?",
+    "ground_truth": "$5 billion",
+    "supporting_context": "annual negative revenues in the Asset Management segment of $5 billion or more, provided in either case",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "In 2024, what was revenue for Goldman's Asset Management segment?",
+    "ground_truth": "$5 billion",
+    "supporting_context": "annual negative revenues in the Asset Management segment of $5 billion or more, provided in either case",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "State Asset Management segment revenue for Goldman in 2024.",
+    "ground_truth": "$5 billion",
+    "supporting_context": "annual negative revenues in the Asset Management segment of $5 billion or more, provided in either case",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What revenue figure is reported for the Asset Management segment of Goldman in 2024?",
+    "ground_truth": "$5 billion",
+    "supporting_context": "annual negative revenues in the Asset Management segment of $5 billion or more, provided in either case",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What technology-related revenue did Goldman report in 2024?",
+    "ground_truth": "$20.48",
+    "supporting_context": "The average Platform Solutions gross loans were $20.48",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "How much technology revenue did Goldman disclose in 2024?",
+    "ground_truth": "$20.48",
+    "supporting_context": "The average Platform Solutions gross loans were $20.48",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "In 2024, what technology services revenue was reported by Goldman?",
+    "ground_truth": "$20.48",
+    "supporting_context": "The average Platform Solutions gross loans were $20.48",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "State Goldman's technology revenue in 2024.",
+    "ground_truth": "$20.48",
+    "supporting_context": "The average Platform Solutions gross loans were $20.48",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What revenue from technology activities did Goldman report in 2024?",
+    "ground_truth": "$20.48",
+    "supporting_context": "The average Platform Solutions gross loans were $20.48",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What was Asia revenue for Goldman in 2024?",
+    "ground_truth": "104,554,000",
+    "supporting_context": "GS Asia underwrote 104,554,000",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "How much revenue did Goldman report in Asia in 2024?",
+    "ground_truth": "104,554,000",
+    "supporting_context": "GS Asia underwrote 104,554,000",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "In 2024, what revenue is disclosed for Goldman in Asia?",
+    "ground_truth": "104,554,000",
+    "supporting_context": "GS Asia underwrote 104,554,000",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "State Goldman's Asia revenue in 2024.",
+    "ground_truth": "104,554,000",
+    "supporting_context": "GS Asia underwrote 104,554,000",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What revenue figure did Goldman report for Asia in 2024?",
+    "ground_truth": "104,554,000",
+    "supporting_context": "GS Asia underwrote 104,554,000",
+    "document": "goldman_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What was Jpmorgan net income in 2024?",
+    "ground_truth": "$58.5 billion",
+    "supporting_context": "JPMorganChase reported net income of $58.5 billion",
+    "document": "jpmorgan_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "How much net income did Jpmorgan report in 2024?",
+    "ground_truth": "$58.5 billion",
+    "supporting_context": "JPMorganChase reported net income of $58.5 billion",
+    "document": "jpmorgan_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "What net earnings did Jpmorgan report in 2024?",
+    "ground_truth": "$58.5 billion",
+    "supporting_context": "JPMorganChase reported net income of $58.5 billion",
+    "document": "jpmorgan_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "In 2024, what was Jpmorgan's net income?",
+    "ground_truth": "$58.5 billion",
+    "supporting_context": "JPMorganChase reported net income of $58.5 billion",
+    "document": "jpmorgan_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "State Jpmorgan's net income for 2024.",
+    "ground_truth": "$58.5 billion",
+    "supporting_context": "JPMorganChase reported net income of $58.5 billion",
+    "document": "jpmorgan_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "What was Jpmorgan assets under management (AUM) in 2024?",
+    "ground_truth": "$4.0 trillion",
+    "supporting_context": "Assets under management were $4.0 trillion and client",
+    "document": "jpmorgan_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "How much AUM did Jpmorgan report in 2024?",
+    "ground_truth": "$4.0 trillion",
+    "supporting_context": "Assets under management were $4.0 trillion and client",
+    "document": "jpmorgan_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "In 2024, what assets under management did Jpmorgan disclose?",
+    "ground_truth": "$4.0 trillion",
+    "supporting_context": "Assets under management were $4.0 trillion and client",
+    "document": "jpmorgan_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "State Jpmorgan's AUM for 2024.",
+    "ground_truth": "$4.0 trillion",
+    "supporting_context": "Assets under management were $4.0 trillion and client",
+    "document": "jpmorgan_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "What was the AUM of Jpmorgan in 2024?",
+    "ground_truth": "$4.0 trillion",
+    "supporting_context": "Assets under management were $4.0 trillion and client",
+    "document": "jpmorgan_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "What was Morgan Stanley total revenue in 2024?",
+    "ground_truth": "$61.8 billion",
+    "supporting_context": "• The Firm reported net revenues of $61.8 billion and net",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "How much total revenue did Morgan Stanley report in 2024?",
+    "ground_truth": "$61.8 billion",
+    "supporting_context": "• The Firm reported net revenues of $61.8 billion and net",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "What total revenues were reported by Morgan Stanley in 2024?",
+    "ground_truth": "$61.8 billion",
+    "supporting_context": "• The Firm reported net revenues of $61.8 billion and net",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "In 2024, what was Morgan Stanley revenue?",
+    "ground_truth": "$61.8 billion",
+    "supporting_context": "• The Firm reported net revenues of $61.8 billion and net",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "State Morgan Stanley's total revenue for 2024.",
+    "ground_truth": "$61.8 billion",
+    "supporting_context": "• The Firm reported net revenues of $61.8 billion and net",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 7
+  },
+  {
+    "question": "What was Investment Management segment revenue for Morgan Stanley in 2024?",
+    "ground_truth": "$5.9",
+    "supporting_context": "• Investment Management reported net revenues of $5.9",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "How much revenue did the Investment Management segment generate for Morgan Stanley in 2024?",
+    "ground_truth": "$5.9",
+    "supporting_context": "• Investment Management reported net revenues of $5.9",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "In 2024, what was revenue for Morgan Stanley's Investment Management segment?",
+    "ground_truth": "$5.9",
+    "supporting_context": "• Investment Management reported net revenues of $5.9",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "State Investment Management segment revenue for Morgan Stanley in 2024.",
+    "ground_truth": "$5.9",
+    "supporting_context": "• Investment Management reported net revenues of $5.9",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "What revenue figure is reported for the Investment Management segment of Morgan Stanley in 2024?",
+    "ground_truth": "$5.9",
+    "supporting_context": "• Investment Management reported net revenues of $5.9",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "What was Asset Management segment revenue for Morgan Stanley in 2024?",
+    "ground_truth": "$16,501 million",
+    "supporting_context": "Asset management revenues of $16,501 million in 2024",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "How much revenue did the Asset Management segment generate for Morgan Stanley in 2024?",
+    "ground_truth": "$16,501 million",
+    "supporting_context": "Asset management revenues of $16,501 million in 2024",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "In 2024, what was revenue for Morgan Stanley's Asset Management segment?",
+    "ground_truth": "$16,501 million",
+    "supporting_context": "Asset management revenues of $16,501 million in 2024",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "State Asset Management segment revenue for Morgan Stanley in 2024.",
+    "ground_truth": "$16,501 million",
+    "supporting_context": "Asset management revenues of $16,501 million in 2024",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "What revenue figure is reported for the Asset Management segment of Morgan Stanley in 2024?",
+    "ground_truth": "$16,501 million",
+    "supporting_context": "Asset management revenues of $16,501 million in 2024",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 6
+  },
+  {
+    "question": "What was Institutional Securities segment revenue for Morgan Stanley in 2024?",
+    "ground_truth": "$28.1 billion",
+    "supporting_context": "• Institutional Securities net revenues of $28.1 billion reflect",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "How much revenue did the Institutional Securities segment generate for Morgan Stanley in 2024?",
+    "ground_truth": "$28.1 billion",
+    "supporting_context": "• Institutional Securities net revenues of $28.1 billion reflect",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "In 2024, what was revenue for Morgan Stanley's Institutional Securities segment?",
+    "ground_truth": "$28.1 billion",
+    "supporting_context": "• Institutional Securities net revenues of $28.1 billion reflect",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "State Institutional Securities segment revenue for Morgan Stanley in 2024.",
+    "ground_truth": "$28.1 billion",
+    "supporting_context": "• Institutional Securities net revenues of $28.1 billion reflect",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What revenue figure is reported for the Institutional Securities segment of Morgan Stanley in 2024?",
+    "ground_truth": "$28.1 billion",
+    "supporting_context": "• Institutional Securities net revenues of $28.1 billion reflect",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What was Wealth Management segment revenue for Morgan Stanley in 2024?",
+    "ground_truth": "$28,420 million",
+    "supporting_context": "• Wealth Management net revenues of $28,420 million in",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "How much revenue did the Wealth Management segment generate for Morgan Stanley in 2024?",
+    "ground_truth": "$28,420 million",
+    "supporting_context": "• Wealth Management net revenues of $28,420 million in",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "In 2024, what was revenue for Morgan Stanley's Wealth Management segment?",
+    "ground_truth": "$28,420 million",
+    "supporting_context": "• Wealth Management net revenues of $28,420 million in",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "State Wealth Management segment revenue for Morgan Stanley in 2024.",
+    "ground_truth": "$28,420 million",
+    "supporting_context": "• Wealth Management net revenues of $28,420 million in",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 5
+  },
+  {
+    "question": "What revenue figure is reported for the Wealth Management segment of Morgan Stanley in 2024?",
+    "ground_truth": "$28,420 million",
+    "supporting_context": "• Wealth Management net revenues of $28,420 million in",
+    "document": "morgan stanley_2024.txt",
+    "financial_fact_confidence": 5
+  }
+]

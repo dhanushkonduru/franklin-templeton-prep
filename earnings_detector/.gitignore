@@ -1,0 +1,32 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local env files
+.env
+.env.*
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Generated project outputs
+earnings.db
+results.json
+
+# Local data or exports
+data/
+*.sqlite
+*.sqlite3

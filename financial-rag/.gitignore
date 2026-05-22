@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# dotenv secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# ChromaDB and downloaded data (large)
+data/chroma_db/
+data/raw/
+*.sqlite3
+
+# Logs
+*.log
+
+# Test / cache
+.pytest_cache/
+.tox/
+.mypy_cache/
+
+# Misc
+node_modules/
+pip-wheel-metadata/
+
