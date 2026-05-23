@@ -1,0 +1,39 @@
+# Git and editor
+.git
+.gitignore
+.vscode
+.idea
+
+# Python local environment and caches
+.venv
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.coverage
+htmlcov
+
+# Secrets (compose mounts .env at runtime)
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+
+# Logs and generated artifacts
+*.log
+logs
+artifacts
+*.joblib
+.cache
+huggingface
+
+# Local databases
+*.db
+*.sqlite3
+
+# Optional compose overrides
+docker-compose.override.yml
