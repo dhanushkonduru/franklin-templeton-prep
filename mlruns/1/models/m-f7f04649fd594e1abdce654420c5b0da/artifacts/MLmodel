@@ -1,0 +1,23 @@
+artifact_path: /Users/DK19/Downloads/franklin templeton prep/portfolio-ml/mlruns/1/models/m-f7f04649fd594e1abdce654420c5b0da/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.14.4
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.12.0
+model_id: m-f7f04649fd594e1abdce654420c5b0da
+model_size_bytes: 170566
+model_uuid: m-f7f04649fd594e1abdce654420c5b0da
+prompts: null
+run_id: 64dd9c81309f4e3c98ef15817eb6e83b
+utc_time_created: '2026-05-24 13:04:56.238329'

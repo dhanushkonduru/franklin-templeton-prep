@@ -32,6 +32,7 @@ from features.feature_engineering import create_features
 from features.targets import create_targets
 from models.regime_detection import detect_regimes
 
+
 FEATURE_COLUMNS = [
     "return_1d",
     "momentum_3m",
@@ -257,6 +258,32 @@ def main():
     mlp_ir = information_ratio(
         mlp_returns,
         benchmark.reindex(mlp_returns.index).fillna(0),
+    )
+    
+    dataset = build_dataset(
+    features,
+    targets,
+    fundamentals,
+    )
+
+    log(
+        f"Dataset ready: {len(dataset)} rows."
+    )
+
+    dataset.to_csv(
+
+        OUTPUT_DIR /
+
+        "final_dataset.csv",
+
+        index=False
+
+    )
+
+    log(
+
+        "Saved dataset for monitoring"
+
     )
 
     log("\nSaving artifacts to output/ ...")
