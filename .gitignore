@@ -51,6 +51,8 @@ mlruns/
 cache/
 tmp/
 
+temp_backup/
+
 output/
 monitoring/*.html
 monitoring/*.json
