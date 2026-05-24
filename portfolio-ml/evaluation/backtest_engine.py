@@ -24,6 +24,7 @@ def walk_forward_backtest(
     )
 
     predictions = []
+    last_xgb_model = None
 
     for i in range(5, len(years)-1):
 
@@ -56,6 +57,8 @@ def walk_forward_backtest(
             y_train
         )
 
+        last_xgb_model = xgb_model
+
         xgb_preds = xgb_model.predict(
             X_test
         )
@@ -79,11 +82,12 @@ def walk_forward_backtest(
         predictions.append(test_data)
 
         print(
-            f"Completed Walk-Forward Test: {test_year}"
+            f"Completed Walk-Forward Test: {test_year}",
+            flush=True,
         )
 
     final_predictions = pd.concat(
         predictions
     )
 
-    return final_predictions
+    return final_predictions, last_xgb_model

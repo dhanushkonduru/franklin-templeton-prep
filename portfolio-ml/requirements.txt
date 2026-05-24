@@ -4,3 +4,5 @@ yfinance
 scikit-learn
 xgboost
 torch
+matplotlib
+joblib

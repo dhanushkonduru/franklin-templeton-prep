@@ -35,3 +35,9 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+# Downloaded market data cache
+data/cache/
+
+# Pipeline run artifacts (regenerate with python main.py)
+output/
