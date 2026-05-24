@@ -1,0 +1,1423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10-K Document Comparator</title>
+    <style>
+      :root {
+        color-scheme: dark light;
+        --bg: #0a0c10;
+        --bg-2: #111318;
+        --panel: #141821;
+        --panel-2: #171c26;
+        --panel-3: #1a2030;
+        --border: #252c3a;
+        --border-strong: #31394a;
+        --text: #eef2ff;
+        --muted: #9aa4b5;
+        --accent: #6366f1;
+        --accent-2: #818cf8;
+        --danger: #ff4d4d;
+        --warning: #ff8c42;
+        --caution: #f5c842;
+        --success: #4ade80;
+        --info: #60a5fa;
+        --critical-soft: rgba(255, 77, 77, 0.12);
+        --high-soft: rgba(255, 140, 66, 0.12);
+        --medium-soft: rgba(245, 200, 66, 0.12);
+        --low-soft: rgba(74, 222, 128, 0.12);
+        --cosmetic-soft: rgba(96, 165, 250, 0.12);
+        --focus: rgba(99, 102, 241, 0.25);
+        --shadow: 0 1px 0 rgba(255, 255, 255, 0.02), 0 12px 32px rgba(0, 0, 0, 0.25);
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f3f5fa;
+          --bg-2: #e9edf5;
+          --panel: #ffffff;
+          --panel-2: #f7f8fc;
+          --panel-3: #eef2f8;
+          --border: #cfd7e5;
+          --border-strong: #b7c1d4;
+          --text: #0f172a;
+          --muted: #536074;
+          --shadow: 0 1px 0 rgba(15, 23, 42, 0.04), 0 12px 24px rgba(15, 23, 42, 0.06);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body,
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        overflow: hidden;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      button {
+        border: 0;
+        background: none;
+        color: inherit;
+        cursor: pointer;
+      }
+
+      .app-shell {
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr);
+        height: 100%;
+      }
+
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px 16px;
+        background: var(--bg-2);
+        border-right: 1px solid var(--border);
+        overflow: hidden;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 6px 2px 12px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--border-strong);
+        background: var(--panel);
+        color: var(--accent);
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-copy {
+        min-width: 0;
+      }
+
+      .brand-title {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-subtitle {
+        margin: 3px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .sidebar-card {
+        border: 1px solid var(--border);
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .doc-card {
+        padding: 14px;
+      }
+
+      .section-heading {
+        margin: 0 0 10px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .doc-pair {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .doc-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        max-width: 100%;
+        padding: 9px 10px;
+        border: 1px solid var(--border);
+        background: var(--panel-2);
+        color: var(--text);
+        overflow: hidden;
+      }
+
+      .doc-pill span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .doc-arrow {
+        color: var(--accent);
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        flex: 0 0 auto;
+      }
+
+      .filter-block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 32px;
+        padding: 7px 12px;
+        border: 1px solid var(--border);
+        background: var(--panel-2);
+        color: var(--muted);
+        border-radius: 0;
+        transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease, transform 120ms ease;
+        user-select: none;
+      }
+
+      .pill:hover {
+        border-color: var(--border-strong);
+        color: var(--text);
+      }
+
+      .pill-active {
+        background: var(--panel-3);
+        color: var(--text);
+        border-color: var(--accent);
+      }
+
+      .section-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        min-height: 0;
+        overflow: auto;
+        padding-right: 2px;
+      }
+
+      .section-row {
+        display: grid;
+        grid-template-columns: 10px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        text-align: left;
+        padding: 10px 10px;
+        border: 1px solid var(--border);
+        background: var(--panel-2);
+        color: var(--text);
+        transition: border-color 120ms ease, background-color 120ms ease;
+      }
+
+      .section-row:hover {
+        border-color: var(--border-strong);
+        background: var(--panel-3);
+      }
+
+      .section-row-active {
+        border-color: var(--accent);
+        background: var(--panel-3);
+      }
+
+      .section-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--muted);
+      }
+
+      .section-meta {
+        min-width: 0;
+      }
+
+      .section-id {
+        display: block;
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 11px;
+        color: var(--accent-2);
+        letter-spacing: 0.08em;
+      }
+
+      .section-name {
+        display: block;
+        font-size: 13px;
+        margin-top: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 30px;
+        padding: 4px 8px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 11px;
+        color: var(--text);
+      }
+
+      .main-pane {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        min-width: 0;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+      }
+
+      .topbar-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 0;
+      }
+
+      .topbar-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      .topbar-title span:first-child {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .topbar-metrics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 11px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        color: var(--text);
+        white-space: nowrap;
+      }
+
+      .tag-muted {
+        color: var(--muted);
+      }
+
+      .tag-risk-increased {
+        border-color: rgba(255, 77, 77, 0.45);
+        background: rgba(255, 77, 77, 0.12);
+        color: #ffb3b3;
+      }
+
+      .tag-risk-decreased {
+        border-color: rgba(74, 222, 128, 0.4);
+        background: rgba(74, 222, 128, 0.12);
+        color: #b8f7cd;
+      }
+
+      .tag-risk-neutral {
+        border-color: var(--border);
+        background: var(--panel-2);
+        color: var(--muted);
+      }
+
+      .topbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .action-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        color: var(--text);
+        transition: border-color 120ms ease, background-color 120ms ease, transform 120ms ease;
+      }
+
+      .action-button:hover {
+        border-color: var(--accent);
+        background: var(--panel-2);
+      }
+
+      .action-button:focus-visible,
+      .pill:focus-visible,
+      .section-row:focus-visible,
+      .finding-button:focus-visible,
+      .file-input-label:focus-within {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      .content-scroll {
+        min-width: 0;
+        min-height: 0;
+        overflow: auto;
+        padding: 20px;
+      }
+
+      .stack {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 1320px;
+        margin: 0 auto;
+      }
+
+      .summary-card,
+      .metrics-card,
+      .finding-card {
+        border: 1px solid var(--border);
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .summary-card {
+        padding: 18px;
+      }
+
+      .summary-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+
+      .summary-title {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .summary-body {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--text);
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .metric-card {
+        padding: 14px 14px 15px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+      }
+
+      .metric-label {
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+
+      .metric-value {
+        display: block;
+        margin-top: 10px;
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .finding-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .finding-card {
+        overflow: hidden;
+      }
+
+      .finding-button {
+        width: 100%;
+        text-align: left;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        color: var(--text);
+      }
+
+      .finding-topline {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .finding-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .severity-tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 10px;
+        border: 1px solid currentColor;
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .finding-title {
+        min-width: 0;
+      }
+
+      .finding-title-line {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+        flex-wrap: wrap;
+      }
+
+      .finding-section {
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 12px;
+        color: var(--accent-2);
+        letter-spacing: 0.04em;
+      }
+
+      .finding-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .finding-summary {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.65;
+        color: var(--text);
+      }
+
+      .finding-meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .change-tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 30px;
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        background: var(--panel-2);
+        color: var(--text);
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .score-bar {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 8px;
+        border: 1px solid var(--border);
+        background: var(--panel-2);
+      }
+
+      .score-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        border: 1px solid var(--border-strong);
+        background: transparent;
+      }
+
+      .score-dot-active {
+        border-color: currentColor;
+      }
+
+      .score-dot-critical {
+        color: var(--danger);
+        background: currentColor;
+      }
+
+      .score-dot-high {
+        color: var(--warning);
+        background: currentColor;
+      }
+
+      .score-dot-medium {
+        color: var(--caution);
+        background: currentColor;
+      }
+
+      .score-dot-low {
+        color: var(--success);
+        background: currentColor;
+      }
+
+      .score-dot-cosmetic {
+        color: var(--info);
+        background: currentColor;
+      }
+
+      .finding-expanded {
+        border-top: 1px solid var(--border);
+        padding: 16px;
+        background: var(--panel-2);
+      }
+
+      .diff-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .diff-block {
+        border: 1px solid var(--border);
+        background: var(--panel);
+        padding: 12px;
+      }
+
+      .diff-label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .diff-text {
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-word;
+        line-height: 1.65;
+        font-size: 13px;
+        color: var(--text);
+      }
+
+      .empty-state {
+        padding: 26px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .action-note {
+        margin-top: 12px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        padding: 12px;
+      }
+
+      .action-note-label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .action-note-body {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.65;
+        color: var(--text);
+      }
+
+      .file-input {
+        display: none;
+      }
+
+      .file-input-label {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .subtle {
+        color: var(--muted);
+      }
+
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      .finder-empty {
+        padding: 18px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+      }
+
+      @media (max-width: 1180px) {
+        .metrics-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .diff-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 980px) {
+        body {
+          overflow: auto;
+        }
+
+        .app-shell {
+          grid-template-columns: 1fr;
+          height: auto;
+          min-height: 100%;
+        }
+
+        .sidebar {
+          border-right: 0;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .main-pane {
+          min-height: 100vh;
+        }
+
+        .topbar {
+          position: static;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .topbar-actions {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .content-scroll {
+          padding: 14px;
+        }
+
+        .summary-card,
+        .finding-button,
+        .finding-expanded {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const { useState, useRef } = React;
+
+      const SEVERITY_ORDER = {
+        CRITICAL: 5,
+        HIGH: 4,
+        MEDIUM: 3,
+        LOW: 2,
+        COSMETIC: 1,
+      };
+
+      const SEVERITY_STYLES = {
+        CRITICAL: { color: "var(--danger)", soft: "var(--critical-soft)" },
+        HIGH: { color: "var(--warning)", soft: "var(--high-soft)" },
+        MEDIUM: { color: "var(--caution)", soft: "var(--medium-soft)" },
+        LOW: { color: "var(--success)", soft: "var(--low-soft)" },
+        COSMETIC: { color: "var(--info)", soft: "var(--cosmetic-soft)" },
+      };
+
+      const ALL_SEVERITIES = ["CRITICAL", "HIGH", "MEDIUM", "LOW", "COSMETIC"];
+      const ALL_SEVERITY_FILTERS = ["ALL", ...ALL_SEVERITIES];
+
+      const DEMO_REPORT = {
+        doc_a: "acme_10k_2023.txt",
+        doc_b: "acme_10k_2024.txt",
+        risk_delta: "INCREASED",
+        executive_summary:
+          "Critical findings indicate a materially higher risk profile year-over-year, led by cybersecurity, AI governance, regulatory exposure, and disclosure changes in operational sections. Analysts should prioritize the critical and high-priority items before reviewing the remaining findings.",
+        total_tokens: 11987,
+        by_severity: {
+          CRITICAL: 2,
+          HIGH: 2,
+          MEDIUM: 2,
+          LOW: 1,
+          COSMETIC: 1,
+        },
+        results: [
+          {
+            section_id: "1A",
+            section_title: "Risk Factors",
+            severity: "CRITICAL",
+            score: 5,
+            change_type: "NEW_DISCLOSURE",
+            summary: "New cybersecurity breach affecting approximately 31,000 enterprise customers",
+            old_text: "The company faces various cybersecurity risks and monitors threats through standard controls.",
+            new_text:
+              "In October 2024, the company disclosed a cybersecurity incident involving unauthorized access to cloud infrastructure and the exfiltration of customer data.",
+            action: "Escalate to compliance team; review cyber insurance coverage and incident disclosure timing.",
+          },
+          {
+            section_id: "1A",
+            section_title: "Risk Factors",
+            severity: "HIGH",
+            score: 4,
+            change_type: "RISK_ESCALATION",
+            summary: "Competitive pressure from AI-first rivals has intensified",
+            old_text: "The consumer electronics industry evolves rapidly and is subject to competitive pressures.",
+            new_text:
+              "We face increased competition from AI-first competitors that have launched products with more capable on-device AI features.",
+            action: "Track margin pressure and monitor whether management updates product positioning in the next quarter.",
+          },
+          {
+            section_id: "1B",
+            section_title: "Unresolved Staff Comments",
+            severity: "MEDIUM",
+            score: 3,
+            change_type: "MODIFICATION",
+            summary: "Cybersecurity briefings to the Audit Committee increased from quarterly to monthly",
+            old_text: "The Audit Committee receives quarterly cybersecurity briefings.",
+            new_text: "The Audit Committee receives monthly cybersecurity briefings following the 2024 incident.",
+            action: "Check if board-level governance changes are supported by updated remediation milestones.",
+          },
+          {
+            section_id: "2",
+            section_title: "Properties",
+            severity: "LOW",
+            score: 2,
+            change_type: "MODIFICATION",
+            summary: "International footprint expanded with two additional lease locations",
+            old_text: "We lease office and retail space in New York, London, Tokyo, and Shanghai.",
+            new_text: "We lease office and retail space in New York, London, Tokyo, Shanghai, Dublin, and Singapore.",
+            action: "Non-material operational change; useful for monitoring footprint expansion.",
+          },
+          {
+            section_id: "3",
+            section_title: "Legal Proceedings",
+            severity: "CRITICAL",
+            score: 5,
+            change_type: "NEW_DISCLOSURE",
+            summary: "European Commission ruling may reduce Services revenue by $180-220 million annually",
+            old_text: "We are under investigation by regulatory authorities in the European Union regarding our App Store policies.",
+            new_text:
+              "Following a ruling by the European Commission, we are required to permit third-party payment processors and reduce commissions in the European Union.",
+            action: "Review legal exposure, model revenue impact, and compare against prior guidance language.",
+          },
+          {
+            section_id: "7",
+            section_title: "Management's Discussion and Analysis",
+            severity: "HIGH",
+            score: 4,
+            change_type: "STRATEGIC_SHIFT",
+            summary: "Product strategy now emphasizes AI research and on-device inference",
+            old_text: "We continue to invest in next-generation chip design, artificial intelligence capabilities, and augmented reality technologies.",
+            new_text:
+              "The company accelerated investment in AI research, including proprietary large language model capabilities and on-device AI inference technology.",
+            action: "Assess whether strategy shift is supported by capex, hiring, and margin trajectory.",
+          },
+          {
+            section_id: "9A",
+            section_title: "Controls and Procedures",
+            severity: "MEDIUM",
+            score: 3,
+            change_type: "MODIFICATION",
+            summary: "Board cybersecurity updates increased from quarterly to monthly",
+            old_text: "The board receives quarterly cybersecurity briefings.",
+            new_text: "The board receives monthly cybersecurity briefings after the 2024 security event.",
+            action: "Useful governance change, but not by itself a disclosure of remediation effectiveness.",
+          },
+          {
+            section_id: "9A",
+            section_title: "Controls and Procedures",
+            severity: "COSMETIC",
+            score: 1,
+            change_type: "COSMETIC",
+            summary: "Minor wording change standardizes terminology around access controls",
+            old_text: "We maintain access controls across critical systems.",
+            new_text: "We maintain access controls across critical platforms and systems.",
+            action: "No immediate analyst action required.",
+          },
+        ],
+      };
+
+      function pick(...values) {
+        for (const value of values) {
+          if (value !== undefined && value !== null && value !== "") {
+            return value;
+          }
+        }
+        return null;
+      }
+
+      function normalizeSeverity(rawSeverity, score) {
+        const normalized = String(rawSeverity || "").trim().toUpperCase().replace(/\s+/g, "_");
+        if (normalized && SEVERITY_ORDER[normalized]) {
+          return normalized;
+        }
+        const numericScore = Number(score);
+        if (Number.isFinite(numericScore)) {
+          if (numericScore >= 5) return "CRITICAL";
+          if (numericScore >= 4) return "HIGH";
+          if (numericScore >= 3) return "MEDIUM";
+          if (numericScore >= 2) return "LOW";
+        }
+        return "COSMETIC";
+      }
+
+      function normalizeChangeType(rawType) {
+        const normalized = String(rawType || "").trim().toUpperCase().replace(/\s+/g, "_");
+        if (!normalized) return "MODIFICATION";
+        return normalized;
+      }
+
+      function toDisplayText(value) {
+        if (value === undefined || value === null || value === "") {
+          return "—";
+        }
+        if (Array.isArray(value)) {
+          return value.map(toDisplayText).join("\n");
+        }
+        if (typeof value === "object") {
+          try {
+            return JSON.stringify(value, null, 2);
+          } catch {
+            return String(value);
+          }
+        }
+        return String(value);
+      }
+
+      function slugify(text) {
+        return String(text || "")
+          .trim()
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "")
+          .slice(0, 48) || "finding";
+      }
+
+      function deriveSectionContext(node, inherited) {
+        return {
+          section_id: pick(node.section_id, node.item_id, inherited.section_id),
+          section_title: pick(node.section_title, node.title, inherited.section_title),
+        };
+      }
+
+      function isFindingLike(node) {
+        if (!node || typeof node !== "object" || Array.isArray(node)) {
+          return false;
+        }
+        return Boolean(
+          node.summary ||
+            node.change_type ||
+            node.severity ||
+            node.priority_tier ||
+            node.materiality_score !== undefined ||
+            node.score !== undefined ||
+            node.old_text ||
+            node.new_text ||
+            node.old_stance ||
+            node.new_stance ||
+            node.action ||
+            node.analyst_note
+        );
+      }
+
+      function collectFindings(node, inherited = {}, output = []) {
+        if (!node) {
+          return output;
+        }
+
+        if (Array.isArray(node)) {
+          node.forEach((item) => collectFindings(item, inherited, output));
+          return output;
+        }
+
+        if (typeof node !== "object") {
+          return output;
+        }
+
+        const context = deriveSectionContext(node, inherited);
+        const nestedKeys = ["results", "section_analyses", "findings", "sections", "changes", "items", "children"];
+
+        for (const key of nestedKeys) {
+          if (Array.isArray(node[key])) {
+            collectFindings(node[key], context, output);
+          }
+        }
+
+        if (isFindingLike(node)) {
+          output.push({
+            section_id: pick(node.section_id, node.item_id, context.section_id, "UNSPECIFIED"),
+            section_title: pick(node.section_title, node.title, context.section_title, "Unspecified Section"),
+            severity: normalizeSeverity(pick(node.severity, node.priority_tier, node.significance), pick(node.score, node.materiality_score)),
+            score: Math.max(1, Math.min(5, Number(pick(node.score, node.materiality_score, node.priority_score, 3)) || 3)),
+            change_type: normalizeChangeType(pick(node.change_type, node.type, node.kind)),
+            summary: toDisplayText(pick(node.summary, node.detail, node.description, node.overall_summary, node.note)),
+            old_text: toDisplayText(pick(node.old_text, node.old_stance, node.before, node.previous_text)),
+            new_text: toDisplayText(pick(node.new_text, node.new_stance, node.after, node.current_text)),
+            action: toDisplayText(pick(node.action, node.analyst_note, node.note, node.recommendation)),
+          });
+        }
+
+        return output;
+      }
+
+      function normalizeReport(raw) {
+        const source = raw && typeof raw === "object" ? raw : {};
+        const collected = collectFindings(source);
+        const findings = collected.map((finding, index) => ({
+          ...finding,
+          id: `${finding.section_id || "section"}-${index + 1}-${slugify(finding.summary)}`,
+        }));
+
+        const severityCounts = ALL_SEVERITIES.reduce((acc, severity) => {
+          acc[severity] = 0;
+          return acc;
+        }, {});
+
+        findings.forEach((finding) => {
+          severityCounts[finding.severity] = (severityCounts[finding.severity] || 0) + 1;
+        });
+
+        const sectionOrder = [];
+        const sectionMap = new Map();
+
+        findings.forEach((finding) => {
+          if (!sectionMap.has(finding.section_id)) {
+            sectionOrder.push(finding.section_id);
+            sectionMap.set(finding.section_id, {
+              section_id: finding.section_id,
+              section_title: finding.section_title,
+              count: 0,
+              maxSeverity: finding.severity,
+            });
+          }
+
+          const section = sectionMap.get(finding.section_id);
+          section.count += 1;
+          if ((SEVERITY_ORDER[finding.severity] || 0) > (SEVERITY_ORDER[section.maxSeverity] || 0)) {
+            section.maxSeverity = finding.severity;
+          }
+          if (!section.section_title && finding.section_title) {
+            section.section_title = finding.section_title;
+          }
+        });
+
+        const sections = sectionOrder.map((sectionId) => sectionMap.get(sectionId));
+
+        const docA = pick(source.doc_a, source.doc_a_name, source.old_filename, source.document_a, source.documentA, source.left_file, source.file_a);
+        const docB = pick(source.doc_b, source.doc_b_name, source.new_filename, source.document_b, source.documentB, source.right_file, source.file_b);
+        const riskDelta = String(
+          pick(source.risk_delta, source.overall_risk_delta, source.delta, source.riskDirection, "NEUTRAL")
+        )
+          .trim()
+          .toUpperCase();
+        const executiveSummary = toDisplayText(
+          pick(source.executive_summary, source.overall_summary, source.summary, source.notes, findings[0]?.summary || "No executive summary available.")
+        );
+        const totalTokens = Number(pick(source.total_tokens, source.total_tokens_used, source.tokens_used, source.token_count, 0)) || 0;
+        const totalFindings = findings.length;
+
+        return {
+          raw: source,
+          doc_a: docA || "Document A",
+          doc_b: docB || "Document B",
+          risk_delta: riskDelta === "DECREASED" || riskDelta === "NEUTRAL" || riskDelta === "INCREASED" ? riskDelta : "NEUTRAL",
+          executive_summary: executiveSummary,
+          total_tokens: totalTokens,
+          total_findings: totalFindings,
+          by_severity: severityCounts,
+          findings,
+          sections,
+          generated_at: pick(source.generated_at, source.generatedAt),
+        };
+      }
+
+      function severityLabelText(severity) {
+        return String(severity || "COSMETIC").replace(/_/g, " ");
+      }
+
+      function changeTypeLabelText(changeType) {
+        return String(changeType || "MODIFICATION").replace(/_/g, " ");
+      }
+
+      function getRiskTagClass(riskDelta) {
+        if (riskDelta === "INCREASED") return "tag-risk-increased";
+        if (riskDelta === "DECREASED") return "tag-risk-decreased";
+        return "tag-risk-neutral";
+      }
+
+      function App() {
+        const [report, setReport] = useState(() => normalizeReport(DEMO_REPORT));
+        const [severityFilter, setSeverityFilter] = useState("ALL");
+        const [activeSectionId, setActiveSectionId] = useState("ALL");
+        const [expandedIds, setExpandedIds] = useState([]);
+        const fileInputRef = useRef(null);
+
+        const toggleExpanded = (id) => {
+          setExpandedIds((current) =>
+            current.includes(id) ? current.filter((entry) => entry !== id) : [...current, id]
+          );
+        };
+
+        const resetViewState = () => {
+          setSeverityFilter("ALL");
+          setActiveSectionId("ALL");
+          setExpandedIds([]);
+        };
+
+        const applyRawReport = (raw) => {
+          setReport(normalizeReport(raw));
+          resetViewState();
+        };
+
+        const loadDemoData = () => {
+          applyRawReport(DEMO_REPORT);
+        };
+
+        const handleFileUpload = async (event) => {
+          const file = event.target.files && event.target.files[0];
+          if (!file) {
+            return;
+          }
+
+          try {
+            const text = await file.text();
+            const parsed = JSON.parse(text);
+            applyRawReport(parsed);
+          } catch (error) {
+            console.error(error);
+            window.alert("Unable to parse that JSON file. Please upload a valid final_report.json file.");
+          } finally {
+            event.target.value = "";
+          }
+        };
+
+        const visibleFindings = report.findings.filter((finding) => {
+          const severityMatch = severityFilter === "ALL" || finding.severity === severityFilter;
+          const sectionMatch = activeSectionId === "ALL" || finding.section_id === activeSectionId;
+          return severityMatch && sectionMatch;
+        });
+
+        const activeSectionCount = activeSectionId === "ALL"
+          ? report.sections.length
+          : report.sections.find((section) => section.section_id === activeSectionId)?.count || 0;
+
+        return (
+          <div className="app-shell">
+            <aside className="sidebar">
+              <div className="brand">
+                <div className="brand-mark">10K</div>
+                <div className="brand-copy">
+                  <h1 className="brand-title">Document Comparator</h1>
+                  <p className="brand-subtitle">Institutional research workspace</p>
+                </div>
+              </div>
+
+              <div className="sidebar-card doc-card">
+                <p className="section-heading">Document Pair</p>
+                <div className="doc-pair">
+                  <div className="doc-pill">
+                    <span className="mono">{report.doc_a}</span>
+                  </div>
+                  <div className="doc-pill">
+                    <span className="doc-arrow">→</span>
+                    <span>{report.doc_b}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="sidebar-card doc-card filter-block">
+                <p className="section-heading">Severity Filter</p>
+                <div className="pill-row">
+                  {ALL_SEVERITY_FILTERS.map((severity) => (
+                    <button
+                      key={severity}
+                      className={`pill ${severityFilter === severity ? "pill-active" : ""}`}
+                      onClick={() => setSeverityFilter(severity)}
+                      type="button"
+                    >
+                      {severity === "ALL" ? "All" : severityLabelText(severity)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="sidebar-card doc-card" style={{ minHeight: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                <p className="section-heading">Sections</p>
+                <div className="section-list">
+                  <button
+                    type="button"
+                    className={`section-row ${activeSectionId === "ALL" ? "section-row-active" : ""}`}
+                    onClick={() => setActiveSectionId("ALL")}
+                  >
+                    <span className="section-dot" style={{ background: "var(--accent)" }} />
+                    <span className="section-meta">
+                      <span className="section-id">ALL</span>
+                      <span className="section-name">All sections</span>
+                    </span>
+                    <span className="badge mono">{report.total_findings}</span>
+                  </button>
+
+                  {report.sections.map((section) => (
+                    <button
+                      key={section.section_id}
+                      type="button"
+                      className={`section-row ${activeSectionId === section.section_id ? "section-row-active" : ""}`}
+                      onClick={() =>
+                        setActiveSectionId((current) => (current === section.section_id ? "ALL" : section.section_id))
+                      }
+                    >
+                      <span
+                        className="section-dot"
+                        style={{ background: SEVERITY_STYLES[section.maxSeverity]?.color || "var(--muted)" }}
+                      />
+                      <span className="section-meta">
+                        <span className="section-id">{section.section_id}</span>
+                        <span className="section-name">{section.section_title}</span>
+                      </span>
+                      <span className="badge mono">{section.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </aside>
+
+            <main className="main-pane">
+              <header className="topbar">
+                <div className="topbar-copy">
+                  <div className="topbar-title">
+                    <span>{report.doc_a}</span>
+                    <span className="subtle">→</span>
+                    <span>{report.doc_b}</span>
+                  </div>
+                  <div className="topbar-metrics">
+                    <span className="tag mono">{report.total_tokens.toLocaleString()} tokens</span>
+                    <span className="tag mono">{report.total_findings.toLocaleString()} findings</span>
+                    {activeSectionId !== "ALL" && (
+                      <span className="tag tag-muted mono">
+                        {activeSectionCount.toLocaleString()} in section {activeSectionId}
+                      </span>
+                    )}
+                    <span className={`tag ${getRiskTagClass(report.risk_delta)} mono`}>
+                      {report.risk_delta}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="topbar-actions">
+                  <label className="file-input-label">
+                    <input
+                      ref={fileInputRef}
+                      className="file-input"
+                      type="file"
+                      accept="application/json,.json"
+                      onChange={handleFileUpload}
+                    />
+                    <button className="action-button" type="button" onClick={() => fileInputRef.current?.click()}>
+                      Load final_report.json
+                    </button>
+                  </label>
+                  <button className="action-button" type="button" onClick={loadDemoData}>
+                    Load demo data
+                  </button>
+                </div>
+              </header>
+
+              <div className="content-scroll">
+                <div className="stack">
+                  <section className="summary-card">
+                    <div className="summary-header">
+                      <div>
+                        <p className="summary-title">Executive Summary</p>
+                      </div>
+                      {report.generated_at && <span className="tag mono">{report.generated_at}</span>}
+                    </div>
+                    <p className="summary-body">{report.executive_summary}</p>
+                  </section>
+
+                  <section className="metrics-grid">
+                    {ALL_SEVERITIES.map((severity) => (
+                      <article key={severity} className="metric-card">
+                        <span className="metric-label" style={{ color: SEVERITY_STYLES[severity].color }}>
+                          {severityLabelText(severity)}
+                        </span>
+                        <span className="metric-value">{report.by_severity[severity] || 0}</span>
+                      </article>
+                    ))}
+                  </section>
+
+                  <section className="finding-list">
+                    {visibleFindings.length === 0 ? (
+                      <div className="empty-state">
+                        No findings match the current section and severity filters.
+                      </div>
+                    ) : (
+                      visibleFindings.map((finding) => {
+                        const expanded = expandedIds.includes(finding.id);
+                        const dots = Array.from({ length: 5 }, (_, index) => index < finding.score);
+                        return (
+                          <article key={finding.id} className="finding-card">
+                            <button
+                              type="button"
+                              className="finding-button"
+                              onClick={() => toggleExpanded(finding.id)}
+                            >
+                              <div className="finding-topline">
+                                <div className="finding-left">
+                                  <span
+                                    className="severity-tag"
+                                    style={{
+                                      color: SEVERITY_STYLES[finding.severity]?.color || "var(--muted)",
+                                      background: SEVERITY_STYLES[finding.severity]?.soft || "transparent",
+                                    }}
+                                  >
+                                    {severityLabelText(finding.severity)}
+                                  </span>
+                                  <div className="finding-title">
+                                    <div className="finding-title-line">
+                                      <span className="finding-section">{finding.section_id}</span>
+                                      <span className="finding-section-title">{finding.section_title}</span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="finding-meta">
+                                  <span className="change-tag">{changeTypeLabelText(finding.change_type)}</span>
+                                  <span className="score-bar" aria-label={`Materiality score ${finding.score} out of 5`}>
+                                    {dots.map((active, index) => (
+                                      <span
+                                        key={index}
+                                        className={`score-dot score-dot-${finding.severity.toLowerCase()} ${active ? "score-dot-active" : ""}`}
+                                        style={{ opacity: active ? 1 : 0.25 }}
+                                      />
+                                    ))}
+                                  </span>
+                                </div>
+                              </div>
+
+                              <p className="finding-summary">{finding.summary}</p>
+                            </button>
+
+                            {expanded && (
+                              <div className="finding-expanded">
+                                <div className="diff-grid">
+                                  <div className="diff-block">
+                                    <span className="diff-label">Old Text</span>
+                                    <p className="diff-text">{finding.old_text}</p>
+                                  </div>
+                                  <div className="diff-block">
+                                    <span className="diff-label">New Text</span>
+                                    <p className="diff-text">{finding.new_text}</p>
+                                  </div>
+                                </div>
+
+                                <div className="action-note">
+                                  <span className="action-note-label">Analyst Action</span>
+                                  <p className="action-note-body">{finding.action}</p>
+                                </div>
+                              </div>
+                            )}
+                          </article>
+                        );
+                      })
+                    )}
+                  </section>
+                </div>
+              </div>
+            </main>
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>

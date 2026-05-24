@@ -1,0 +1,179 @@
+ACME CORPORATION
+Annual Report on Form 10-K
+For the Fiscal Year Ended December 31, 2023
+
+TABLE OF CONTENTS
+
+Item 1.   Business .................................................. 3
+Item 1A.  Risk Factors .............................................. 8
+Item 1B.  Unresolved Staff Comments ................................. 22
+Item 1C.  Cybersecurity ............................................. 23
+Item 2.   Properties ................................................ 25
+Item 3.   Legal Proceedings ......................................... 26
+Item 7.   Management's Discussion and Analysis ...................... 28
+Item 7A.  Quantitative and Qualitative Disclosures .................. 45
+Item 8.   Financial Statements ...................................... 47
+Item 9A.  Controls and Procedures ................................... 89
+
+================================================================================
+
+Item 1. Business
+
+OVERVIEW
+
+Acme Corporation (the "Company") is a global technology company headquartered in San Francisco, California. We design, manufacture, and sell consumer electronics, software, and online services. Our products include the Acme Phone, Acme Tablet, Acme Laptop, and the Acme Cloud platform.
+
+Founded in 1995, we have grown to over 45,000 employees worldwide and operate in 38 countries. Our fiscal year 2023 revenue was $12.4 billion, representing a 6% increase from fiscal year 2022.
+
+PRODUCTS AND SERVICES
+
+Acme Phone: Our flagship smartphone product line. The Acme Phone 15 series was launched in September 2023 with improved camera systems, a new A17 chip, and extended battery life. The Acme Phone remains our largest revenue segment, contributing approximately 52% of total net sales.
+
+Acme Cloud: Our subscription-based cloud platform offering storage, productivity tools, and developer APIs. As of December 2023, Acme Cloud had 180 million paying subscribers, up from 150 million in 2022. Monthly recurring revenue for Acme Cloud reached $420 million.
+
+Acme Laptop: Our personal computing line, including the Acme Laptop Pro and Acme Laptop Air. We transitioned the full lineup to our proprietary M-series chips during 2022, resulting in significant performance and efficiency gains.
+
+COMPETITION
+
+We operate in highly competitive markets. Our primary competitors include GlobalTech Inc., Meridian Systems, and various regional manufacturers. We compete on the basis of innovation, product quality, ecosystem integration, and brand loyalty.
+
+EMPLOYEES
+
+As of December 31, 2023, we had approximately 45,200 full-time equivalent employees. We believe our employee relations are good. We offer competitive compensation, equity participation, and comprehensive benefits.
+
+================================================================================
+
+Item 1A. Risk Factors
+
+Our business is subject to numerous risks. You should carefully consider the following risks before making investment decisions.
+
+MACROECONOMIC RISKS
+
+Global economic conditions: Deterioration in global economic conditions could reduce consumer spending on our products. Inflation, rising interest rates, and currency fluctuations may adversely impact our margins and demand. During 2023, we experienced modest revenue headwinds in Europe due to unfavorable exchange rates.
+
+Supply chain concentration: We rely on a limited number of suppliers for critical components, including semiconductors, display panels, and memory chips. Our primary semiconductor supplier is Taiwan Semiconductor Manufacturing Company (TSMC). Any disruption to TSMC's operations — including natural disasters, geopolitical events, or manufacturing defects — could materially impact our ability to deliver products on schedule.
+
+TECHNOLOGY RISKS
+
+Rapid technological change: The consumer electronics industry evolves rapidly. Our success depends on our ability to develop and introduce new products and services that anticipate and respond to technological changes. Failure to do so could result in loss of market share.
+
+Cybersecurity: We face ongoing cybersecurity threats. In 2023, we experienced one minor security incident involving unauthorized access to a non-production database. No customer data was compromised. We continue to invest in security infrastructure.
+
+REGULATORY RISKS
+
+Data privacy: We are subject to data privacy regulations including GDPR, CCPA, and emerging regulations in various jurisdictions. Non-compliance could result in significant fines and reputational damage.
+
+Antitrust scrutiny: We are under investigation by regulatory authorities in the European Union regarding our App Store policies. While we believe our practices are lawful, the outcome of these investigations is uncertain.
+
+================================================================================
+
+Item 1B. Unresolved Staff Comments
+
+None.
+
+================================================================================
+
+Item 1C. Cybersecurity
+
+RISK MANAGEMENT
+
+We maintain a comprehensive cybersecurity program managed by our Chief Information Security Officer (CISO), who reports directly to the CEO. Our program includes annual penetration testing, continuous monitoring, employee security training, and incident response procedures.
+
+GOVERNANCE
+
+The Board of Directors' Audit Committee receives quarterly cybersecurity briefings. In 2023, we appointed two new Board members with cybersecurity expertise.
+
+================================================================================
+
+Item 2. Properties
+
+Our principal offices are located at 1 Acme Way, San Francisco, California. We own this approximately 2.1 million square foot campus. We also lease office and retail space in New York, London, Tokyo, and Shanghai. Total leased space is approximately 4.8 million square feet.
+
+================================================================================
+
+Item 3. Legal Proceedings
+
+EU App Store Investigation: The European Commission is investigating our App Store fee structure and policies under the Digital Markets Act. We are cooperating fully with the investigation. We are unable to predict the outcome or estimate potential financial impact at this time.
+
+Patent Litigation: We are a defendant in several patent infringement cases. We believe we have meritorious defenses in all pending cases.
+
+================================================================================
+
+Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+OVERVIEW
+
+Fiscal year 2023 was a year of solid execution. We achieved revenue of $12.4 billion, net income of $2.8 billion, and generated $3.6 billion in free cash flow. These results reflect strong performance in our services segment and resilience in hardware despite macroeconomic headwinds.
+
+REVENUE
+
+Total net revenue increased 6% year-over-year to $12.4 billion from $11.7 billion in 2022.
+
+Product revenue was $8.9 billion, up 2% from $8.7 billion in 2022. Growth was driven by strong demand for the Acme Phone 15 series, partially offset by softness in Acme Laptop sales.
+
+Services revenue was $3.5 billion, up 17% from $3.0 billion in 2022. Acme Cloud subscriber growth and higher average revenue per user drove this performance. We expect services to represent a growing proportion of total revenue going forward.
+
+GROSS MARGIN
+
+Gross margin was 38.2% in 2023, compared to 37.1% in 2022. The improvement reflects favorable product mix shift toward higher-margin services, partially offset by increased component costs.
+
+OPERATING EXPENSES
+
+Research and development expense was $2.1 billion (17% of revenue), up from $1.8 billion in 2022. We continue to invest heavily in next-generation chip design, artificial intelligence capabilities, and augmented reality technologies.
+
+Selling, general and administrative expense was $1.4 billion (11% of revenue), roughly flat with 2022.
+
+NET INCOME
+
+Net income was $2.8 billion ($4.12 per diluted share), compared to $2.4 billion ($3.54 per diluted share) in 2022.
+
+LIQUIDITY
+
+We ended 2023 with $8.2 billion in cash and equivalents. We generated $3.6 billion in operating cash flow and returned $2.1 billion to shareholders through dividends and share repurchases.
+
+OUTLOOK
+
+We expect fiscal year 2024 revenue in the range of $13.0 billion to $13.5 billion, representing 5-9% growth. We anticipate continued strength in services and a modest recovery in laptop demand.
+
+================================================================================
+
+Item 7A. Quantitative and Qualitative Disclosures About Market Risk
+
+INTEREST RATE RISK
+
+A hypothetical 100 basis point increase in interest rates would result in an approximate $45 million decrease in the fair value of our investment portfolio.
+
+FOREIGN EXCHANGE RISK
+
+Approximately 38% of our revenue is denominated in foreign currencies. We use forward contracts and options to hedge a portion of our foreign currency exposure.
+
+================================================================================
+
+Item 8. Financial Statements and Supplementary Data
+
+[Financial statements follow — condensed for this sample]
+
+CONSOLIDATED STATEMENTS OF OPERATIONS (in millions)
+
+                              2023        2022
+Net revenue              $12,400     $11,700
+Cost of revenue            7,659       7,354
+Gross profit               4,741       4,346
+Operating expenses         3,500       3,200
+Operating income           1,241       1,146
+Other income, net            412         298
+Income before taxes        1,653       1,444
+Provision for income taxes   247         245
+Net income                $2,806      $2,399
+
+================================================================================
+
+Item 9A. Controls and Procedures
+
+DISCLOSURE CONTROLS
+
+Our Chief Executive Officer and Chief Financial Officer have evaluated our disclosure controls and procedures as of December 31, 2023, and concluded that they are effective.
+
+INTERNAL CONTROL OVER FINANCIAL REPORTING
+
+Management's assessment of internal control over financial reporting was conducted using the COSO 2013 framework. There were no material weaknesses identified.

@@ -1,0 +1,191 @@
+ACME CORPORATION
+Annual Report on Form 10-K
+For the Fiscal Year Ended December 31, 2024
+
+TABLE OF CONTENTS
+
+Item 1.   Business .................................................. 3
+Item 1A.  Risk Factors .............................................. 9
+Item 1B.  Unresolved Staff Comments ................................. 24
+Item 1C.  Cybersecurity ............................................. 25
+Item 2.   Properties ................................................ 28
+Item 3.   Legal Proceedings ......................................... 29
+Item 7.   Management's Discussion and Analysis ...................... 32
+Item 7A.  Quantitative and Qualitative Disclosures .................. 51
+Item 8.   Financial Statements ...................................... 53
+Item 9A.  Controls and Procedures ................................... 97
+
+================================================================================
+
+Item 1. Business
+
+OVERVIEW
+
+Acme Corporation (the "Company") is a global technology company headquartered in San Francisco, California. We design, manufacture, and sell consumer electronics, software, and online services. Our products include the Acme Phone, Acme Tablet, Acme Laptop, Acme Vision Pro headset, and the Acme Cloud platform.
+
+Founded in 1995, we have grown to over 52,000 employees worldwide and operate in 44 countries. Our fiscal year 2024 revenue was $14.1 billion, representing a 14% increase from fiscal year 2023.
+
+PRODUCTS AND SERVICES
+
+Acme Phone: Our flagship smartphone product line. The Acme Phone 16 series was launched in September 2024 featuring our new on-device AI assistant, improved camera computational photography, a next-generation A18 chip, and titanium chassis options. The Acme Phone remains our largest revenue segment, contributing approximately 49% of total net sales.
+
+Acme Cloud: Our subscription-based cloud platform offering storage, productivity tools, developer APIs, and AI-powered features. As of December 2024, Acme Cloud had 230 million paying subscribers, up from 180 million in 2023. Monthly recurring revenue for Acme Cloud reached $580 million, driven by strong uptake of our new AI tier at $19.99/month.
+
+Acme Laptop: Our personal computing line, including the Acme Laptop Pro and Acme Laptop Air. We launched the Acme Laptop Pro with integrated neural processing capabilities in March 2024. The product was well-received by creative professionals.
+
+Acme Vision Pro: We introduced the Acme Vision Pro spatial computing headset in February 2024. Initial sales were below initial forecasts, reflecting the premium price point of $3,499. We are actively developing a lower-cost variant targeted for release in 2025.
+
+COMPETITION
+
+We operate in highly competitive markets. Our primary competitors include GlobalTech Inc., Meridian Systems, NovaTech AI, and various regional manufacturers. Competition in AI-enabled devices is intensifying significantly. We compete on the basis of innovation, product quality, ecosystem integration, AI capabilities, and brand loyalty.
+
+EMPLOYEES
+
+As of December 31, 2024, we had approximately 52,100 full-time equivalent employees, an increase of approximately 15% from 2023, reflecting our investments in AI research and international expansion. We believe our employee relations are good. We offer competitive compensation, equity participation, comprehensive benefits, and flexible work arrangements.
+
+================================================================================
+
+Item 1A. Risk Factors
+
+Our business is subject to numerous risks. You should carefully consider the following risks before making investment decisions.
+
+MACROECONOMIC RISKS
+
+Global economic conditions: Deterioration in global economic conditions could reduce consumer spending on our products. Inflation, rising interest rates, and currency fluctuations may adversely impact our margins and demand.
+
+Supply chain concentration: We rely on a limited number of suppliers for critical components, including semiconductors, display panels, and memory chips. Our primary semiconductor supplier is Taiwan Semiconductor Manufacturing Company (TSMC). Any disruption to TSMC's operations — including natural disasters, geopolitical events, or manufacturing defects — could materially impact our ability to deliver products on schedule. Geopolitical tensions between the United States and China represent an elevated and growing risk to our supply chain. We are actively working to qualify additional semiconductor suppliers to reduce concentration risk, but this process is expected to take 18-24 months to complete.
+
+TECHNOLOGY RISKS
+
+Rapid technological change: The consumer electronics industry evolves rapidly. Our success depends on our ability to develop and introduce new products and services that anticipate and respond to technological changes, particularly the shift toward AI-native devices. Failure to do so could result in loss of market share. We face increased competition from AI-first competitors who have launched products with significantly more capable on-device AI features.
+
+Artificial Intelligence Risks: We face new risks related to our AI initiatives. AI models may produce inaccurate, biased, or harmful outputs that could expose us to legal liability and reputational harm. Regulatory frameworks for AI are rapidly evolving across jurisdictions. Our ability to train and deploy AI models may be limited by data privacy regulations. We have invested $800 million in AI infrastructure in 2024 and expect this investment to increase.
+
+Cybersecurity: We face ongoing cybersecurity threats. In 2024, we experienced a significant security incident in which unauthorized actors accessed our Acme Cloud infrastructure and exfiltrated data belonging to approximately 31,000 enterprise customers. We have notified affected customers and relevant regulators, and have taken steps to remediate the vulnerability. We cannot guarantee that similar incidents will not occur in the future. This incident resulted in $47 million in remediation costs and has exposed us to potential regulatory fines and customer litigation.
+
+REGULATORY RISKS
+
+Data privacy: We are subject to data privacy regulations including GDPR, CCPA, and emerging regulations in various jurisdictions. Non-compliance could result in significant fines and reputational damage. In January 2025, we received a preliminary notice of investigation from the Irish Data Protection Commission related to the 2024 security incident.
+
+Antitrust scrutiny: Following a ruling by the European Commission in September 2024, we are required to make significant changes to our App Store policies in the European Union, including allowing third-party payment processors and reducing our commission rates from 30% to a maximum of 17% for digital goods. We estimate this ruling will reduce our annual Services revenue by approximately $180-220 million beginning in fiscal year 2025. We are appealing the ruling.
+
+AI Regulation: The EU AI Act, which entered into force in 2024, imposes compliance requirements on certain AI systems we deploy. We have established an AI governance committee to oversee compliance. The full scope of compliance obligations under global AI regulations remains uncertain.
+
+================================================================================
+
+Item 1B. Unresolved Staff Comments
+
+None.
+
+================================================================================
+
+Item 1C. Cybersecurity
+
+RISK MANAGEMENT
+
+We maintain a comprehensive cybersecurity program managed by our Chief Information Security Officer (CISO), who reports directly to the CEO and to the Board's Audit Committee. Our program includes quarterly penetration testing (increased from annual in response to the 2024 incident), continuous monitoring, mandatory employee security training, and incident response procedures. Following the 2024 security incident, we engaged an independent cybersecurity firm to conduct a comprehensive review of our infrastructure, and have implemented 23 of the 27 recommended remediation actions.
+
+GOVERNANCE
+
+The Board of Directors' Audit Committee receives monthly cybersecurity briefings (increased from quarterly). In 2024, we appointed a new CISO with extensive experience in cloud security. The full Board receives an annual cybersecurity risk briefing.
+
+INCIDENT DISCLOSURE
+
+In October 2024, we disclosed a cybersecurity incident pursuant to the SEC's cybersecurity disclosure rules. Unauthorized actors accessed our Acme Cloud infrastructure between August 12 and September 3, 2024. Data belonging to approximately 31,000 enterprise customers was exfiltrated. The incident has been contained and remediated.
+
+================================================================================
+
+Item 2. Properties
+
+Our principal offices are located at 1 Acme Way, San Francisco, California. We own this approximately 2.1 million square foot campus. We also lease office and retail space in New York, London, Tokyo, Shanghai, Dublin, and Singapore. Total leased space is approximately 6.2 million square feet, an increase from 4.8 million square feet in 2023, reflecting our international expansion.
+
+================================================================================
+
+Item 3. Legal Proceedings
+
+EU App Store Ruling: In September 2024, the European Commission issued a ruling requiring changes to our App Store policies under the Digital Markets Act, including permitting third-party payment processors and capping commissions at 17%. We are appealing this ruling. The financial impact is estimated at $180-220 million per year in reduced Services revenue.
+
+Cybersecurity Litigation: Following the 2024 data breach, we have received notices of potential class action litigation from affected enterprise customers in the United States and Germany. We are unable to estimate the potential financial exposure at this time.
+
+Patent Litigation: We are a defendant in several patent infringement cases. We believe we have meritorious defenses in all pending cases.
+
+================================================================================
+
+Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+OVERVIEW
+
+Fiscal year 2024 was a year of strong growth tempered by significant challenges. We achieved revenue of $14.1 billion, net income of $3.1 billion, and generated $4.2 billion in free cash flow. These results reflect exceptional performance in our services segment, driven by AI-powered offerings, and solid hardware results including the launch of Acme Vision Pro. However, results were partially offset by $47 million in costs related to the cybersecurity incident and $62 million in legal and compliance costs related to the EU App Store ruling.
+
+REVENUE
+
+Total net revenue increased 14% year-over-year to $14.1 billion from $12.4 billion in 2023.
+
+Product revenue was $9.8 billion, up 10% from $8.9 billion in 2023. Growth was driven by strong demand for the Acme Phone 16 series and the launch of Acme Vision Pro, partially offset by continued softness in base Acme Laptop configurations.
+
+Services revenue was $4.3 billion, up 23% from $3.5 billion in 2023. Acme Cloud subscriber growth — particularly in the AI tier — and improved average revenue per user drove this performance. Services now represent 30% of total revenue, up from 28% in 2023. We expect services to represent over 35% of revenue by 2026.
+
+GROSS MARGIN
+
+Gross margin was 37.4% in 2024, compared to 38.2% in 2023. The decline reflects higher component costs for the Acme Vision Pro, the cybersecurity incident remediation costs, and upfront AI infrastructure investments, partially offset by favorable services mix.
+
+OPERATING EXPENSES
+
+Research and development expense was $2.9 billion (21% of revenue), up from $2.1 billion in 2023. The increase primarily reflects our accelerated investment in AI research, including the build-out of our proprietary large language model capabilities and on-device AI inference technology.
+
+Selling, general and administrative expense was $1.6 billion (11% of revenue), up from $1.4 billion in 2023, reflecting international expansion costs and increased legal expenses.
+
+NET INCOME
+
+Net income was $3.1 billion ($4.58 per diluted share), compared to $2.8 billion ($4.12 per diluted share) in 2023.
+
+LIQUIDITY
+
+We ended 2024 with $9.8 billion in cash and equivalents. We generated $4.2 billion in operating cash flow and returned $2.6 billion to shareholders through dividends and share repurchases.
+
+OUTLOOK
+
+We expect fiscal year 2025 revenue in the range of $15.5 billion to $16.2 billion, representing 10-15% growth. This outlook does not fully reflect the impact of the EU App Store ruling, which we estimate will reduce 2025 Services revenue by $180-220 million. We expect continued strong growth in AI-enabled services and initial traction from the lower-cost Acme Vision headset targeted for late 2025.
+
+================================================================================
+
+Item 7A. Quantitative and Qualitative Disclosures About Market Risk
+
+INTEREST RATE RISK
+
+A hypothetical 100 basis point increase in interest rates would result in an approximate $62 million decrease in the fair value of our investment portfolio, compared to $45 million in 2023, reflecting our larger investment portfolio.
+
+FOREIGN EXCHANGE RISK
+
+Approximately 42% of our revenue is denominated in foreign currencies, up from 38% in 2023, reflecting international expansion. We use forward contracts and options to hedge a portion of our foreign currency exposure.
+
+================================================================================
+
+Item 8. Financial Statements and Supplementary Data
+
+[Financial statements follow — condensed for this sample]
+
+CONSOLIDATED STATEMENTS OF OPERATIONS (in millions)
+
+                              2024        2023
+Net revenue              $14,100     $12,400
+Cost of revenue            8,823       7,659
+Gross profit               5,277       4,741
+Operating expenses         4,500       3,500
+Operating income             777       1,241
+Other income, net            714         412
+Income before taxes        1,491       1,653
+Provision for income taxes   191         247
+Net income                $3,100      $2,806
+
+================================================================================
+
+Item 9A. Controls and Procedures
+
+DISCLOSURE CONTROLS
+
+Our Chief Executive Officer and Chief Financial Officer have evaluated our disclosure controls and procedures as of December 31, 2024, and concluded that they are effective.
+
+INTERNAL CONTROL OVER FINANCIAL REPORTING
+
+Management's assessment of internal control over financial reporting was conducted using the COSO 2013 framework. We identified one material weakness related to access controls in our cloud infrastructure, which contributed to the 2024 cybersecurity incident. We have implemented remediation measures and expect to remediate this material weakness by Q2 2025. This material weakness has been reported to our external auditors.
