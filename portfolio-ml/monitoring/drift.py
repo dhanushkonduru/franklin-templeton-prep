@@ -1,10 +1,7 @@
 import pandas as pd
 
 from evidently import Report
-
-from evidently.presets import (
-    DataDriftPreset
-)
+from evidently.presets import DataDriftPreset
 
 reference = pd.read_csv(
     "monitoring/baseline.csv"
@@ -49,3 +46,55 @@ print(
     "Drift report generated"
 
 )
+
+result = snapshot.dict()
+
+drift_count = \
+result["metrics"][0][
+
+    "value"
+
+][
+
+    "count"
+
+]
+
+drift_share = \
+result["metrics"][0][
+
+    "value"
+
+][
+
+    "share"
+
+]
+
+print(
+
+    f"\nDrifted Columns: {drift_count}"
+
+)
+
+print(
+
+    f"Drift Share: {drift_share:.2f}"
+
+)
+
+if drift_share > 0.3:
+
+    print(
+
+        "\nALERT DRIFT DETECTED\n"
+
+    )
+
+else:
+
+    print(
+
+        "\nNo significant drift\n"
+
+    )

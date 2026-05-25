@@ -1,8 +1,9 @@
+fastapi
+uvicorn
+mlflow
+evidently
 pandas
-numpy
-yfinance
 scikit-learn
 xgboost
-torch
-matplotlib
-joblib
+dvc
+pytest

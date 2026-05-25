@@ -1,9 +1,7 @@
-from fastapi import FastAPI
-
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 import mlflow
-
 import pandas as pd
 
 
@@ -11,83 +9,36 @@ app = FastAPI()
 
 
 MODEL_NAME = "PortfolioXGBoost"
-
-MODEL_STAGE = "Staging"
-
-
-model = mlflow.pyfunc.load_model(
-
-    f"models:/{MODEL_NAME}/{MODEL_STAGE}"
-
-)
+MODEL_STAGE = "Production"
 
 
-class StockInput(
+try:
+    model = mlflow.pyfunc.load_model(f"models:/{MODEL_NAME}/{MODEL_STAGE}")
+except Exception:
+    model = None
 
-    BaseModel
 
-):
-
+class StockInput(BaseModel):
     return_1d: float
-
     momentum_3m: float
-
     momentum_12m: float
-
     volatility: float
-
     pe_ratio: float
-
     roe: float
-
     debt_to_equity: float
-
     revenue_growth: float
 
 
 @app.get("/")
-
 def health():
-
-    return {
-
-        "status":"running"
-
-    }
+    return {"status": "running", "model_loaded": model is not None}
 
 
-@app.post(
+@app.post("/predict")
+def predict(data: StockInput):
+    if model is None:
+        raise HTTPException(status_code=503, detail="Model is unavailable")
 
-    "/predict"
-
-)
-
-def predict(
-
-    data: StockInput
-
-):
-
-    features = pd.DataFrame(
-
-        [
-
-            data.dict()
-
-        ]
-
-    )
-
-    prediction = model.predict(
-
-        features
-
-    )[0]
-
-    return {
-
-        "predicted_return":
-
-        float(prediction)
-
-    }
+    features = pd.DataFrame([data.model_dump()])
+    prediction = model.predict(features)[0]
+    return {"predicted_return": float(prediction)}

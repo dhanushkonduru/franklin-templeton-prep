@@ -1,8 +1,7 @@
-import mlflow
-import mlflow.sklearn
-
-
 from mlflow.tracking import MlflowClient
+
+import mlflow
+import mlflow.xgboost
 
 client = MlflowClient()
 
@@ -60,18 +59,14 @@ def log_metrics(
 
 
 def log_model(
-
     model,
-    name
-
+    artifact_path,
+    registered_model_name=None,
 ):
-
-    mlflow.sklearn.log_model(
-
+    mlflow.xgboost.log_model(
         model,
-
-        name=name
-
+        artifact_path=artifact_path,
+        registered_model_name=registered_model_name,
     )
 
 def register_model(
