@@ -1,8 +1,0 @@
-pandas
-numpy
-yfinance
-scikit-learn
-xgboost
-torch
-matplotlib
-joblib
