@@ -54,18 +54,20 @@ jobs:
 
         run: |
 
+          cd portfolio-ml
+
           python main.py
 
       - name: Verify artifacts
 
         run: |
 
-          ls output
+          ls portfolio-ml/output
 
       - name: Run monitoring
 
         run: |
 
-          python monitoring/prepare_monitoring.py || true
+          python portfolio-ml/monitoring/prepare_monitoring.py || true
 
-          python monitoring/drift.py || true
+          python portfolio-ml/monitoring/drift.py || true
