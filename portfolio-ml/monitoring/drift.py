@@ -1,7 +1,26 @@
+import os
 import pandas as pd
 
 from evidently import Report
 from evidently.presets import DataDriftPreset
+
+
+if (
+    not os.path.exists(
+        "monitoring/baseline.csv"
+    )
+    or
+    not os.path.exists(
+        "monitoring/current.csv"
+    )
+):
+
+    print(
+        "Monitoring data missing. Skipping drift."
+    )
+
+    exit(0)
+
 
 reference = pd.read_csv(
     "monitoring/baseline.csv"
@@ -10,6 +29,7 @@ reference = pd.read_csv(
 current = pd.read_csv(
     "monitoring/current.csv"
 )
+
 
 report = Report(
 
@@ -21,6 +41,7 @@ report = Report(
 
 )
 
+
 snapshot = report.run(
 
     reference_data=reference,
@@ -28,6 +49,7 @@ snapshot = report.run(
     current_data=current
 
 )
+
 
 snapshot.save_html(
 
@@ -41,13 +63,16 @@ snapshot.save_json(
 
 )
 
+
 print(
 
     "Drift report generated"
 
 )
 
+
 result = snapshot.dict()
+
 
 drift_count = \
 result["metrics"][0][
@@ -60,6 +85,7 @@ result["metrics"][0][
 
 ]
 
+
 drift_share = \
 result["metrics"][0][
 
@@ -70,6 +96,7 @@ result["metrics"][0][
     "share"
 
 ]
+
 
 print(
 
@@ -82,6 +109,7 @@ print(
     f"Drift Share: {drift_share:.2f}"
 
 )
+
 
 if drift_share > 0.3:
 
