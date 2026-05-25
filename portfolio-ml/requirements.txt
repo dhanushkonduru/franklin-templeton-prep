@@ -1,9 +1,11 @@
-fastapi
-uvicorn
-mlflow
-evidently
 pandas
+numpy
 scikit-learn
 xgboost
+mlflow
 dvc
+evidently
+fastapi
+uvicorn
 pytest
+yfinance
