@@ -1,11 +1,12 @@
 pandas
 numpy
+yfinance
 scikit-learn
 xgboost
+torch
 mlflow
 dvc
 evidently
 fastapi
 uvicorn
 pytest
-yfinance
